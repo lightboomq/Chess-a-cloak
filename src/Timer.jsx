@@ -40,7 +40,15 @@ function Timer({
 				className={isRunningPlayer ? `${s.timer} ${s.timerActive}` : s.timer}
 			>{`${minutes}:${seconds}`}</h1>
 
-			<h2 style={{ rotate: valueRotate }} className={s.opponentTime}>
+			<h2
+				style={{ rotate: valueRotate }}
+				className={
+					!isRunningPlayer
+						? `${s.opponentTimeActive} ${s.opponentDisTimeActive}`
+						: s.opponentTimeDisActive
+				}
+			>
+				{/*заменить название классов*/}
 				{opponentTime}
 			</h2>
 		</div>
